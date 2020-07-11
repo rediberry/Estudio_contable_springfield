@@ -1,0 +1,37 @@
++Empleado
+id (Legajo) manual
+Cuil manual
+idEmpresa (CodigoEmpresa) manual
+idCategoria (Categoria) manual
+Nombre manual
+Apellido manual
+FechaNac manual
+FechaAlta automatica
+Dependiendo tu aplicacion podes agregar:
+-propiedad de agregacion a lista de liquidaciones
+-propiedad de agregacion de empresa
+-propiedad de agregacion de categoria
+
++Empresa
+id (Codigo) automatico
+RazonSocial manual
+Cuit manual
+Domicilio manual
+FechaAlta automatico
+  Dependiendo tu aplicacion podes agregar: 
+-propiedad de agregacion de lista de empleados 
+
++Categoria
+id (Codigo) manual
+Nombre manual
+Convenio manual
+SueldoBasico manual
+
++ Liquidcion
+id (NumeroLiquidacion) automatica
+idEmpleado manual 
+CodigoTransferencia manual
+Periodo manual
+Bruto manual
+Descuentos manual
+FechaAlta automatica

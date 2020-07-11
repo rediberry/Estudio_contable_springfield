@@ -32,11 +32,11 @@ namespace Entidades
         public DateTime FechaAlta { get => _fechaAlta; set => _fechaAlta = value; }
         [DataMember]
         public int Cuil { get => _cuil; set => _cuil = value; }
-        [DataMember]
+        [DataMember(Name = "Legajo")]
         public int IdEmpleado { get => _idEmpleado; set => _idEmpleado = value; }
-        [DataMember]
+        [DataMember(Name = "CodigoEmpresa")]
         public int IdEmpresa { get => _idEmpresa; set => _idEmpresa = value; }
-        [DataMember]
+        [DataMember(Name = "Categoria")]
         public int IdCategoria { get => _idCategoria; set => _idCategoria = value; }
         [DataMember]
         public List<Liquidaciones> Liquidaciones { get => _liquidaciones; set => _liquidaciones = value; }

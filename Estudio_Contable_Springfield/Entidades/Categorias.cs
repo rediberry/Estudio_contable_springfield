@@ -11,19 +11,20 @@ namespace Entidades
     public class Categorias
     {
         private string _nombre;
-        private int _idCategoria;
+        private int _codigo;
         private string _convenio;
         private double _sueldoBasico;
-        public Categorias(double sueldobasico, string convenio, string nombre)
+        public Categorias(double sueldobasico, string convenio, string nombre, int codigo)
         {
             this._convenio = convenio;
             this._sueldoBasico = sueldobasico;
             this._nombre = nombre;
+            this._codigo = codigo;
         }
         [DataMember]
         public string Nombre { get => _nombre; set => _nombre = value; }
         [DataMember]
-        public int IdCategoria { get => _idCategoria; set => _idCategoria = value; }
+        public int Codigo { get => _codigo; set => _codigo = value; }
         [DataMember]
         public string Convenio { get => _convenio; set => _convenio = value; }
         [DataMember]
@@ -31,7 +32,7 @@ namespace Entidades
 
         public override string ToString()
         {
-            return string.Format("Convenio{0} - {1}) Nombre:{2} - Sueldo Básico{3}.",this._convenio,this._idCategoria, this._nombre, this._sueldoBasico);
+            return string.Format("Convenio{0} - {1}) Nombre:{2} - Sueldo Básico{3}.",this._convenio,this._codigo, this._nombre, this._sueldoBasico);
         }
 
 

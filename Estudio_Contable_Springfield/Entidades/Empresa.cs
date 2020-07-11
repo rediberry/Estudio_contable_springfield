@@ -25,7 +25,7 @@ namespace Entidades
         public DateTime FechaAlta{ get => _fechaAlta; set => _fechaAlta = value; }
         [DataMember]
         public string RazonSocial { get => _razonSocial; set => _razonSocial = value; }
-        [DataMember]
+        [DataMember(Name = "Codigo")]
         public int IdEmpresa { get => _idEmpresa; set => _idEmpresa = value; }
         [DataMember]
         public List<Empleado> Empleados { get => _empleados; set => _empleados = value; }
