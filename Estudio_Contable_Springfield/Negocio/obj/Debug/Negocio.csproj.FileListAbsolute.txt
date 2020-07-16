@@ -1,0 +1,11 @@
+C:\Users\ERIC BERRY\Documents\GitHub\Estudio_contable_springfield\Estudio_Contable_Springfield\Negocio\bin\Debug\Negocio.dll
+C:\Users\ERIC BERRY\Documents\GitHub\Estudio_contable_springfield\Estudio_Contable_Springfield\Negocio\bin\Debug\Negocio.pdb
+C:\Users\ERIC BERRY\Documents\GitHub\Estudio_contable_springfield\Estudio_Contable_Springfield\Negocio\bin\Debug\Datos.dll
+C:\Users\ERIC BERRY\Documents\GitHub\Estudio_contable_springfield\Estudio_Contable_Springfield\Negocio\bin\Debug\Entidades.dll
+C:\Users\ERIC BERRY\Documents\GitHub\Estudio_contable_springfield\Estudio_Contable_Springfield\Negocio\bin\Debug\Datos.pdb
+C:\Users\ERIC BERRY\Documents\GitHub\Estudio_contable_springfield\Estudio_Contable_Springfield\Negocio\bin\Debug\Entidades.pdb
+C:\Users\ERIC BERRY\Documents\GitHub\Estudio_contable_springfield\Estudio_Contable_Springfield\Negocio\obj\Debug\Negocio.csprojAssemblyReference.cache
+C:\Users\ERIC BERRY\Documents\GitHub\Estudio_contable_springfield\Estudio_Contable_Springfield\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
+C:\Users\ERIC BERRY\Documents\GitHub\Estudio_contable_springfield\Estudio_Contable_Springfield\Negocio\obj\Debug\Negocio.csproj.CopyComplete
+C:\Users\ERIC BERRY\Documents\GitHub\Estudio_contable_springfield\Estudio_Contable_Springfield\Negocio\obj\Debug\Negocio.dll
+C:\Users\ERIC BERRY\Documents\GitHub\Estudio_contable_springfield\Estudio_Contable_Springfield\Negocio\obj\Debug\Negocio.pdb

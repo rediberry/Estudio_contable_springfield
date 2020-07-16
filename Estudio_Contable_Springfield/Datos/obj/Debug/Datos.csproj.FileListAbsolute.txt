@@ -1,0 +1,11 @@
+C:\Users\ERIC BERRY\Documents\GitHub\Estudio_contable_springfield\Estudio_Contable_Springfield\Datos\bin\Debug\Datos.dll
+C:\Users\ERIC BERRY\Documents\GitHub\Estudio_contable_springfield\Estudio_Contable_Springfield\Datos\bin\Debug\Datos.pdb
+C:\Users\ERIC BERRY\Documents\GitHub\Estudio_contable_springfield\Estudio_Contable_Springfield\Datos\bin\Debug\Entidades.dll
+C:\Users\ERIC BERRY\Documents\GitHub\Estudio_contable_springfield\Estudio_Contable_Springfield\Datos\bin\Debug\Newtonsoft.Json.dll
+C:\Users\ERIC BERRY\Documents\GitHub\Estudio_contable_springfield\Estudio_Contable_Springfield\Datos\bin\Debug\Entidades.pdb
+C:\Users\ERIC BERRY\Documents\GitHub\Estudio_contable_springfield\Estudio_Contable_Springfield\Datos\bin\Debug\Newtonsoft.Json.xml
+C:\Users\ERIC BERRY\Documents\GitHub\Estudio_contable_springfield\Estudio_Contable_Springfield\Datos\obj\Debug\Datos.csprojAssemblyReference.cache
+C:\Users\ERIC BERRY\Documents\GitHub\Estudio_contable_springfield\Estudio_Contable_Springfield\Datos\obj\Debug\Datos.csproj.CoreCompileInputs.cache
+C:\Users\ERIC BERRY\Documents\GitHub\Estudio_contable_springfield\Estudio_Contable_Springfield\Datos\obj\Debug\Datos.csproj.CopyComplete
+C:\Users\ERIC BERRY\Documents\GitHub\Estudio_contable_springfield\Estudio_Contable_Springfield\Datos\obj\Debug\Datos.dll
+C:\Users\ERIC BERRY\Documents\GitHub\Estudio_contable_springfield\Estudio_Contable_Springfield\Datos\obj\Debug\Datos.pdb
