@@ -1,0 +1,14 @@
+C:\Users\ERIC BERRY\Documents\GitHub\846559-CAI-UBA\PruebaWinForms\PruebaWinForms\bin\Debug\PruebaWinForms.exe.config
+C:\Users\ERIC BERRY\Documents\GitHub\846559-CAI-UBA\PruebaWinForms\PruebaWinForms\bin\Debug\PruebaWinForms.exe
+C:\Users\ERIC BERRY\Documents\GitHub\846559-CAI-UBA\PruebaWinForms\PruebaWinForms\bin\Debug\PruebaWinForms.pdb
+C:\Users\ERIC BERRY\Documents\GitHub\846559-CAI-UBA\PruebaWinForms\PruebaWinForms\obj\Debug\PruebaWinForms.csprojAssemblyReference.cache
+C:\Users\ERIC BERRY\Documents\GitHub\846559-CAI-UBA\PruebaWinForms\PruebaWinForms\obj\Debug\PruebaWinForms.FormMenuPrincipal.resources
+C:\Users\ERIC BERRY\Documents\GitHub\846559-CAI-UBA\PruebaWinForms\PruebaWinForms\obj\Debug\PruebaWinForms.Properties.Resources.resources
+C:\Users\ERIC BERRY\Documents\GitHub\846559-CAI-UBA\PruebaWinForms\PruebaWinForms\obj\Debug\PruebaWinForms.csproj.GenerateResource.cache
+C:\Users\ERIC BERRY\Documents\GitHub\846559-CAI-UBA\PruebaWinForms\PruebaWinForms\obj\Debug\PruebaWinForms.csproj.CoreCompileInputs.cache
+C:\Users\ERIC BERRY\Documents\GitHub\846559-CAI-UBA\PruebaWinForms\PruebaWinForms\obj\Debug\PruebaWinForms.exe
+C:\Users\ERIC BERRY\Documents\GitHub\846559-CAI-UBA\PruebaWinForms\PruebaWinForms\obj\Debug\PruebaWinForms.pdb
+C:\Users\ERIC BERRY\Documents\GitHub\846559-CAI-UBA\PruebaWinForms\PruebaWinForms\obj\Debug\PruebaWinForms.Form1.resources
+C:\Users\ERIC BERRY\Documents\GitHub\846559-CAI-UBA\PruebaWinForms\PruebaWinForms\obj\Debug\PruebaWinForms.Form2.resources
+C:\Users\ERIC BERRY\Documents\GitHub\846559-CAI-UBA\PruebaWinForms\PruebaWinForms\obj\Debug\PruebaWinForms.Form3.resources
+C:\Users\ERIC BERRY\Documents\GitHub\846559-CAI-UBA\PruebaWinForms\PruebaWinForms\obj\Debug\PruebaWinForms.Form4.resources
