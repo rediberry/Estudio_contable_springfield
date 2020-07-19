@@ -24,21 +24,48 @@ namespace PruebaWinForms
         private void CargarListaCategorias(List<Categorias> lc)
         {
             listBox1.DataSource = null;
-            listBox1.DataSource = lc;            
+            listBox1.DataSource = lc;
+            listBox1.DisplayMember = "NombreCompletoCategorias";
+            listBox1.SelectedItem = null;
         }
         private void LimpiarCampos()
         {
-            textBox2.Clear();
-            textBox3.Clear();
-            textBox1.Clear();           
+            textBox2.Clear();            
+            textBox1.Clear();
+            listBox1.SelectedItem = null;
         }
         private Boolean ValidarCampos()
         {
             bool valido = true;
             string msg = string.Empty;
-            if (ValidacionHelper.ValidarDouble(textBox2.Text) == -1 || ValidacionHelper.ValidarString(textBox1.Text) == "" || ValidacionHelper.ValidarString(textBox3.Text) == "")
+            if (ValidacionHelper.ValidarDouble(textBox2.Text) == -1 || ValidacionHelper.ValidarString(textBox1.Text) == "")
             {
-                msg = "Debe ingresar valores validos en los campos Nombre, convenio y sueldo básico.";
+                msg = "Debe ingresar valores validos en los campos Nombre y sueldo básico.";
+            }
+            if (msg != string.Empty)
+            {
+                valido = false;
+                MessageBox.Show(msg);
+            }
+            return valido;
+        }
+        private string FormatoString(string s)
+        {
+            return s.First().ToString().ToUpper() + String.Join("", s.Skip(1)).ToLower();
+        }
+        private Boolean ValidarUnicidadCategorias(string categoria)
+        {
+            bool valido = true;
+            string msg = string.Empty;
+            List<string> listnombres = new List<string>();
+            List<Categorias> listcategorias = _cs.TraerListado();
+            foreach (Categorias c in listcategorias)
+            {
+                listnombres.Add(c.Nombre);
+            }
+            if (listnombres.Any(x => x == categoria))
+            {
+                msg = "La Categoría ya se encuentra ingresada.";
             }
             if (msg != string.Empty)
             {
@@ -57,14 +84,16 @@ namespace PruebaWinForms
         private void Form3_Load(object sender, EventArgs e)
         {            
             CargarListaCategorias(_cs.TraerListado());
+            textBox3.Text = "CCT 130/75";
+            textBox3.Enabled = false;
         }
         private void button2_Click(object sender, EventArgs e)
         {
             try
             {
-                if (ValidarCampos())
+                if (ValidarCampos() && ValidarUnicidadCategorias(textBox1.Text))
                 {
-                    string nombre = textBox1.Text;
+                    string nombre = FormatoString(textBox1.Text);
                     double sueldobasico = Convert.ToDouble(textBox2.Text);
                     string convenio = textBox3.Text;                                       
                     this._cs.AltaCategorias(sueldobasico, convenio, nombre);
@@ -78,9 +107,10 @@ namespace PruebaWinForms
                 MessageBox.Show("Error.\n" + ex.Message);
             }
         }
-
+        private void button3_Click(object sender, EventArgs e)
+        {
+            LimpiarCampos();
+        }
         #endregion
-
-
     }
 }

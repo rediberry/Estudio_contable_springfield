@@ -12,31 +12,38 @@ namespace Entidades
     {
         private DateTime _fechaAlta;
         private string _razonSocial;
-        private int _idEmpresa;
+        private int _id;
         private List<Empleado> _empleados;
         private string _domicilio;
-        private int _cuit;
-        public Empresa(int cuit, string razonsocial)
-        {
-            this._cuit = cuit;
+        private long _cuit;
+        public Empresa(string razonsocial, long cuit, string domicilio)
+        {            
             this._razonSocial = razonsocial;
+            this._cuit = cuit;
+            this._domicilio = domicilio;            
         }
         [DataMember]
         public DateTime FechaAlta{ get => _fechaAlta; set => _fechaAlta = value; }
         [DataMember]
         public string RazonSocial { get => _razonSocial; set => _razonSocial = value; }
-        [DataMember(Name = "Codigo")]
-        public int IdEmpresa { get => _idEmpresa; set => _idEmpresa = value; }
+        [DataMember]
+        public int id { get => _id; set => _id = value; }
         [DataMember]
         public List<Empleado> Empleados { get => _empleados; set => _empleados = value; }
         [DataMember]
         public string Domicilio { get => _domicilio; set => _domicilio = value; }
         [DataMember]
-        public int Cuit { get => _cuit; set => _cuit = value; }
+        public long Cuit { get => _cuit; set => _cuit = value; }
         public override string ToString()
         {
-            return string.Format("{0}) Razon Social: {1} - CUIT: {2}.", this._idEmpresa, this._razonSocial, this._cuit);
+            return string.Format("{0}) {1} - CUIT: {2}.", this._id, this._razonSocial, this._cuit);
         }
-
+        public string NombreCompletoEmpresa
+        {
+            get
+            {
+                return string.Format("{0}) {1} - CUIT: {2} - Fecha Alta: {3} - Domicilio: {4}.", this._id, this._razonSocial, this._cuit, this.FechaAlta.ToString("dd/MM/yyyy"), this.Domicilio);
+            }
+        }
     }
 }

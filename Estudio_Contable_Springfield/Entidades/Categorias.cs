@@ -31,9 +31,14 @@ namespace Entidades
 
         public override string ToString()
         {
-            return string.Format("Convenio: {0} - {1}) Nombre: {2} - Sueldo Básico ${3}.",this._convenio,this._id, this._nombre, this._sueldoBasico);
+            return string.Format("{0} - {1}.",this._convenio,this._nombre);
         }
-
-
+        public string NombreCompletoCategorias
+        {
+            get
+            {
+                return string.Format("{2}) {0} - {1} - Sueldo Básico: ${3}.", this._convenio, this._nombre, this.id, this.SueldoBasico);
+            }
+        }
     }
 }
