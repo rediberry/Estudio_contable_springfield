@@ -12,18 +12,19 @@ namespace Entidades
     {
         private double _bruto;
         private double _descuentos;
-        private int _idLiquidacion;
-        private int _idEmpleado;
+        private int _id;        
+        private int _idEmpresa;
         private int _periodo;
         private DateTime _fechaAlta;
         private string _codigoTransferencia;
         private double _salarioNeto;
-        public Liquidaciones(double bruto, double descuentos, int idempleado, int periodo)
+        public Liquidaciones(int idempresa, int periodo, string codigotransferencia, double bruto, double descuentos)
         {
             this._bruto = bruto;
-            this._descuentos = descuentos;
-            this._idEmpleado = idempleado;
+            this._descuentos = descuentos;            
+            this._idEmpresa = idempresa;
             this._periodo = periodo;
+            this._codigoTransferencia = codigotransferencia;
         }
         [DataMember]
         public DateTime FechaAlta { get => _fechaAlta; set => _fechaAlta = value; }
@@ -31,10 +32,10 @@ namespace Entidades
         public double Bruto { get => _bruto; set => _bruto = value; }
         [DataMember]
         public double Descuentos { get => _descuentos; set => _descuentos = value; }
-        [DataMember (Name = "NumeroLiquidacion")]
-        public int IdLiquidacion { get => _idLiquidacion; set => _idLiquidacion = value; }
         [DataMember]
-        public int idEmpleado { get => _idEmpleado; set => _idEmpleado = value; }
+        public int id { get => _id; set => _id = value; }        
+        [DataMember]
+        public int idEmpresa { get => _idEmpresa; set => _idEmpresa = value; }
         [DataMember]
         public int Periodo { get => _periodo; set => _periodo = value; }
         [DataMember]
@@ -43,7 +44,7 @@ namespace Entidades
         public double SalarioNeto { get => (_bruto - _descuentos); set => _salarioNeto = value; }
         public override string ToString()
         {
-            return String.Format("{0}) Periodo: {1}, Bruto: ${2}, Neto:${3}.",this._idLiquidacion, this._periodo, this._bruto, this.SalarioNeto) ;
+            return String.Format("{0}) Periodo: {1}, Bruto: ${2}, Neto:${3}.",this._id, this._periodo, this._bruto, this.SalarioNeto) ;
         }
     }
 }

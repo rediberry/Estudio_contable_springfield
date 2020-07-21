@@ -37,7 +37,7 @@ namespace Entidades
         {
             get
             {
-                return string.Format("{2}) {0} - {1} - Sueldo Básico: ${3}.", this._convenio, this._nombre, this.id, this.SueldoBasico);
+                return string.Format("{2}) {0} - {1} - Sueldo Básico: ${3}", this._convenio, this._nombre, this.id, this.SueldoBasico.ToString("#,###,###.00"));
             }
         }
     }
