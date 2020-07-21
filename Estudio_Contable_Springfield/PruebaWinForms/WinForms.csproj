@@ -115,11 +115,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Estudio_contable_springfield\Estudio_Contable_Springfield\Entidades\Entidades.csproj">
+    <ProjectReference Include="..\Entidades\Entidades.csproj">
       <Project>{3d1c8884-c30d-4a6b-88d3-fa2521d74d4a}</Project>
       <Name>Entidades</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Estudio_contable_springfield\Estudio_Contable_Springfield\Negocio\Negocio.csproj">
+    <ProjectReference Include="..\Negocio\Negocio.csproj">
       <Project>{d18c733b-62ca-402f-9e1e-94f3694efaca}</Project>
       <Name>Negocio</Name>
     </ProjectReference>

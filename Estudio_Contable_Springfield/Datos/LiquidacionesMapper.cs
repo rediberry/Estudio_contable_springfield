@@ -13,7 +13,7 @@ namespace Datos
     {
         public List<Liquidaciones> TraerTodos()
         {
-            string json = WebHelper.Get("api/v1/estudiocontable/Liquidaciones");
+            string json = WebHelper.Get("api/v1/estudiocontable/liquidaciones");
             List<Liquidaciones> resultadoMapeo = MapList(json);
             return resultadoMapeo;
         }
@@ -32,7 +32,7 @@ namespace Datos
         private NameValueCollection ReverseMap(Liquidaciones l)
         {
             NameValueCollection n = new NameValueCollection();
-            n.Add("idEmpresa", l.idEmpresa.ToString());
+            n.Add("idEmpleado", l.idEmpleado.ToString());
             n.Add("Periodo", l.Periodo.ToString());
             n.Add("CodigoTransferencia", l.CodigoTransferencia);
             n.Add("Bruto", l.Bruto.ToString());

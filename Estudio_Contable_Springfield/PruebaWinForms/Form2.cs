@@ -16,12 +16,15 @@ namespace PruebaWinForms
     {
         private CategoriasServicio _cs;
         private EmpresaServicio _emprs;
-        private EmpleadoServicio _empls;        
+        private EmpleadoServicio _empls;
+        private LiquidacionesServicio _ls;
+
         public Form2()
         {
             this._cs = new CategoriasServicio();
             this._emprs = new EmpresaServicio();
-            this._empls = new EmpleadoServicio();            
+            this._empls = new EmpleadoServicio();
+            this._ls = new LiquidacionesServicio();
             InitializeComponent();
         }
         #region métodos
@@ -92,6 +95,16 @@ namespace PruebaWinForms
                 MessageBox.Show(msg);
             }
             return valido;
+        }
+        private Boolean ValidarEmpleadoConLiquidaciones()
+        {
+            Boolean validacion = false;
+            List<Liquidaciones> listliquidaciones = _ls.TraerListadoPorEmpleado(ObtenerIdEmpleado());
+            if (listliquidaciones.Count > 0)
+            {
+                validacion = true;
+            }            
+            return validacion;
         }
         private int ObtenerIdEmpresa()
         {  
@@ -202,10 +215,17 @@ namespace PruebaWinForms
             try
             {
                 int id = ObtenerIdEmpleado();
-                this._empls.EliminarEmpleado(id);
-                MessageBox.Show("El empleado se eliminó exitosamente");                
-                LimpiarCampos2();
-                CargarListaEmpleados(_empls.TraerListadoPorEmpresa(ObtenerIdEmpresa()));
+                if (!ValidarEmpleadoConLiquidaciones())
+                {
+                    this._empls.EliminarEmpleado(id);
+                    MessageBox.Show("El empleado se eliminó exitosamente");
+                    LimpiarCampos2();
+                    CargarListaEmpleados(_empls.TraerListadoPorEmpresa(ObtenerIdEmpresa()));
+                }
+                else
+                {
+                    MessageBox.Show("No se puede eliminar el empleado.\nPosee liquidaciones vigentes.");
+                }
             }
             catch (Exception ex)
             {
@@ -232,16 +252,27 @@ namespace PruebaWinForms
             LimpiarCampos2();
         }        
         private void listBox1_Click(object sender, EventArgs e)
-        {
-            Empleado empl = _empls.ObtenerEmpleado(ObtenerIdEmpleado());
-            textBox1.Text = empl.Nombre;
-            textBox5.Text = empl.Apellido;
-            textBox6.Text = empl.Cuil.ToString();
-            textBox10.Text = empl.FechaNacimiento.ToString("dd/MM/yyyy");
-            comboBox2.SelectedIndex = comboBox2.FindString(ObtenerCategoria(empl));            
-            button2.Enabled = true;
-            button4.Enabled = true;
-            button3.Enabled = true;            
+        {            
+            try
+            {
+                if (listBox1.SelectedItem != null)
+                {
+                    Empleado empl = _empls.ObtenerEmpleado(ObtenerIdEmpleado());
+                    textBox1.Text = empl.Nombre;
+                    textBox5.Text = empl.Apellido;
+                    textBox6.Text = empl.Cuil.ToString();
+                    textBox10.Text = empl.FechaNacimiento.ToString("dd/MM/yyyy");
+                    comboBox2.SelectedIndex = comboBox2.FindString(ObtenerCategoria(empl));
+                    button2.Enabled = true;
+                    button4.Enabled = true;
+                    button3.Enabled = true;
+                }                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Debe seleccionar un empleado de la lista.\nAseguresé de que existan empleados dados de alta.");
+            }
+
         }
         private void button3_Click(object sender, EventArgs e)
         {

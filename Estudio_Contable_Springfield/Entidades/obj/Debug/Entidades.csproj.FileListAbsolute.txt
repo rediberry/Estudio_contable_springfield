@@ -4,3 +4,11 @@ C:\Users\ERIC BERRY\Documents\GitHub\Estudio_contable_springfield\Estudio_Contab
 C:\Users\ERIC BERRY\Documents\GitHub\Estudio_contable_springfield\Estudio_Contable_Springfield\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
 C:\Users\ERIC BERRY\Documents\GitHub\Estudio_contable_springfield\Estudio_Contable_Springfield\Entidades\obj\Debug\Entidades.dll
 C:\Users\ERIC BERRY\Documents\GitHub\Estudio_contable_springfield\Estudio_Contable_Springfield\Entidades\obj\Debug\Entidades.pdb
+C:\Users\146109\Desktop\Eric\FCE - Lic. en Sistemas\Construcción de Aplicaciones informáticas\TP - Estudio Contable\Estudio_contable_springfield-master\Estudio_Contable_Springfield\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\146109\Desktop\Eric\FCE - Lic. en Sistemas\Construcción de Aplicaciones informáticas\TP - Estudio Contable\Estudio_contable_springfield-master\Estudio_Contable_Springfield\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
+C:\Users\146109\Desktop\Estudio_Contable_Springfield\Entidades\bin\Debug\Entidades.dll
+C:\Users\146109\Desktop\Estudio_Contable_Springfield\Entidades\bin\Debug\Entidades.pdb
+C:\Users\146109\Desktop\Estudio_Contable_Springfield\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
+C:\Users\146109\Desktop\Estudio_Contable_Springfield\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\146109\Desktop\Estudio_Contable_Springfield\Entidades\obj\Debug\Entidades.dll
+C:\Users\146109\Desktop\Estudio_Contable_Springfield\Entidades\obj\Debug\Entidades.pdb

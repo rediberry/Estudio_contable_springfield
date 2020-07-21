@@ -44,3 +44,58 @@ C:\Users\ERIC BERRY\Documents\GitHub\Estudio_contable_springfield\Estudio_Contab
 C:\Users\ERIC BERRY\Documents\GitHub\Estudio_contable_springfield\Estudio_Contable_Springfield\PruebaWinForms\obj\Debug\WinForms.csproj.CopyComplete
 C:\Users\ERIC BERRY\Documents\GitHub\Estudio_contable_springfield\Estudio_Contable_Springfield\PruebaWinForms\obj\Debug\PruebaWinForms.exe
 C:\Users\ERIC BERRY\Documents\GitHub\Estudio_contable_springfield\Estudio_Contable_Springfield\PruebaWinForms\obj\Debug\PruebaWinForms.pdb
+C:\Users\146109\Desktop\Eric\FCE - Lic. en Sistemas\Construcción de Aplicaciones informáticas\TP - Estudio Contable\Estudio_contable_springfield-master\Estudio_Contable_Springfield\PruebaWinForms\obj\Debug\PruebaWinForms.Form1.resources
+C:\Users\146109\Desktop\Eric\FCE - Lic. en Sistemas\Construcción de Aplicaciones informáticas\TP - Estudio Contable\Estudio_contable_springfield-master\Estudio_Contable_Springfield\PruebaWinForms\obj\Debug\PruebaWinForms.Form2.resources
+C:\Users\146109\Desktop\Eric\FCE - Lic. en Sistemas\Construcción de Aplicaciones informáticas\TP - Estudio Contable\Estudio_contable_springfield-master\Estudio_Contable_Springfield\PruebaWinForms\obj\Debug\PruebaWinForms.Form3.resources
+C:\Users\146109\Desktop\Eric\FCE - Lic. en Sistemas\Construcción de Aplicaciones informáticas\TP - Estudio Contable\Estudio_contable_springfield-master\Estudio_Contable_Springfield\PruebaWinForms\obj\Debug\PruebaWinForms.Form4.resources
+C:\Users\146109\Desktop\Eric\FCE - Lic. en Sistemas\Construcción de Aplicaciones informáticas\TP - Estudio Contable\Estudio_contable_springfield-master\Estudio_Contable_Springfield\PruebaWinForms\obj\Debug\PruebaWinForms.FormMenuPrincipal.resources
+C:\Users\146109\Desktop\Eric\FCE - Lic. en Sistemas\Construcción de Aplicaciones informáticas\TP - Estudio Contable\Estudio_contable_springfield-master\Estudio_Contable_Springfield\PruebaWinForms\obj\Debug\PruebaWinForms.Properties.Resources.resources
+C:\Users\146109\Desktop\Eric\FCE - Lic. en Sistemas\Construcción de Aplicaciones informáticas\TP - Estudio Contable\Estudio_contable_springfield-master\Estudio_Contable_Springfield\PruebaWinForms\obj\Debug\WinForms.csproj.GenerateResource.cache
+C:\Users\146109\Desktop\Eric\FCE - Lic. en Sistemas\Construcción de Aplicaciones informáticas\TP - Estudio Contable\Estudio_contable_springfield-master\Estudio_Contable_Springfield\PruebaWinForms\obj\Debug\WinForms.csproj.CoreCompileInputs.cache
+C:\Users\146109\Desktop\Eric\FCE - Lic. en Sistemas\Construcción de Aplicaciones informáticas\TP - Estudio Contable\Estudio_contable_springfield-master\Estudio_Contable_Springfield\PruebaWinForms\obj\Debug\WinForms.csprojAssemblyReference.cache
+C:\Users\146109\Desktop\Estudio_Contable_Springfield\PruebaWinForms\bin\Debug\PruebaWinForms.exe.config
+C:\Users\146109\Desktop\Estudio_Contable_Springfield\PruebaWinForms\bin\Debug\PruebaWinForms.exe
+C:\Users\146109\Desktop\Estudio_Contable_Springfield\PruebaWinForms\bin\Debug\PruebaWinForms.pdb
+C:\Users\146109\Desktop\Estudio_Contable_Springfield\PruebaWinForms\bin\Debug\Entidades.dll
+C:\Users\146109\Desktop\Estudio_Contable_Springfield\PruebaWinForms\bin\Debug\Negocio.dll
+C:\Users\146109\Desktop\Estudio_Contable_Springfield\PruebaWinForms\bin\Debug\Datos.dll
+C:\Users\146109\Desktop\Estudio_Contable_Springfield\PruebaWinForms\bin\Debug\Newtonsoft.Json.dll
+C:\Users\146109\Desktop\Estudio_Contable_Springfield\PruebaWinForms\bin\Debug\Entidades.pdb
+C:\Users\146109\Desktop\Estudio_Contable_Springfield\PruebaWinForms\bin\Debug\Negocio.pdb
+C:\Users\146109\Desktop\Estudio_Contable_Springfield\PruebaWinForms\bin\Debug\Datos.pdb
+C:\Users\146109\Desktop\Estudio_Contable_Springfield\PruebaWinForms\bin\Debug\Newtonsoft.Json.xml
+C:\Users\146109\Desktop\Estudio_Contable_Springfield\PruebaWinForms\obj\Debug\WinForms.csprojAssemblyReference.cache
+C:\Users\146109\Desktop\Estudio_Contable_Springfield\PruebaWinForms\obj\Debug\PruebaWinForms.Form1.resources
+C:\Users\146109\Desktop\Estudio_Contable_Springfield\PruebaWinForms\obj\Debug\PruebaWinForms.Form2.resources
+C:\Users\146109\Desktop\Estudio_Contable_Springfield\PruebaWinForms\obj\Debug\PruebaWinForms.Form3.resources
+C:\Users\146109\Desktop\Estudio_Contable_Springfield\PruebaWinForms\obj\Debug\PruebaWinForms.Form4.resources
+C:\Users\146109\Desktop\Estudio_Contable_Springfield\PruebaWinForms\obj\Debug\PruebaWinForms.FormMenuPrincipal.resources
+C:\Users\146109\Desktop\Estudio_Contable_Springfield\PruebaWinForms\obj\Debug\PruebaWinForms.Properties.Resources.resources
+C:\Users\146109\Desktop\Estudio_Contable_Springfield\PruebaWinForms\obj\Debug\WinForms.csproj.GenerateResource.cache
+C:\Users\146109\Desktop\Estudio_Contable_Springfield\PruebaWinForms\obj\Debug\WinForms.csproj.CoreCompileInputs.cache
+C:\Users\146109\Desktop\Estudio_Contable_Springfield\PruebaWinForms\obj\Debug\WinForms.csproj.CopyComplete
+C:\Users\146109\Desktop\Estudio_Contable_Springfield\PruebaWinForms\obj\Debug\PruebaWinForms.exe
+C:\Users\146109\Desktop\Estudio_Contable_Springfield\PruebaWinForms\obj\Debug\PruebaWinForms.pdb
+C:\Users\ERIC BERRY\Desktop\Estudio_Contable_Springfield\PruebaWinForms\bin\Debug\PruebaWinForms.exe.config
+C:\Users\ERIC BERRY\Desktop\Estudio_Contable_Springfield\PruebaWinForms\bin\Debug\PruebaWinForms.exe
+C:\Users\ERIC BERRY\Desktop\Estudio_Contable_Springfield\PruebaWinForms\bin\Debug\PruebaWinForms.pdb
+C:\Users\ERIC BERRY\Desktop\Estudio_Contable_Springfield\PruebaWinForms\bin\Debug\Entidades.dll
+C:\Users\ERIC BERRY\Desktop\Estudio_Contable_Springfield\PruebaWinForms\bin\Debug\Negocio.dll
+C:\Users\ERIC BERRY\Desktop\Estudio_Contable_Springfield\PruebaWinForms\bin\Debug\Datos.dll
+C:\Users\ERIC BERRY\Desktop\Estudio_Contable_Springfield\PruebaWinForms\bin\Debug\Newtonsoft.Json.dll
+C:\Users\ERIC BERRY\Desktop\Estudio_Contable_Springfield\PruebaWinForms\bin\Debug\Entidades.pdb
+C:\Users\ERIC BERRY\Desktop\Estudio_Contable_Springfield\PruebaWinForms\bin\Debug\Negocio.pdb
+C:\Users\ERIC BERRY\Desktop\Estudio_Contable_Springfield\PruebaWinForms\bin\Debug\Datos.pdb
+C:\Users\ERIC BERRY\Desktop\Estudio_Contable_Springfield\PruebaWinForms\bin\Debug\Newtonsoft.Json.xml
+C:\Users\ERIC BERRY\Desktop\Estudio_Contable_Springfield\PruebaWinForms\obj\Debug\WinForms.csprojAssemblyReference.cache
+C:\Users\ERIC BERRY\Desktop\Estudio_Contable_Springfield\PruebaWinForms\obj\Debug\PruebaWinForms.Form1.resources
+C:\Users\ERIC BERRY\Desktop\Estudio_Contable_Springfield\PruebaWinForms\obj\Debug\PruebaWinForms.Form2.resources
+C:\Users\ERIC BERRY\Desktop\Estudio_Contable_Springfield\PruebaWinForms\obj\Debug\PruebaWinForms.Form3.resources
+C:\Users\ERIC BERRY\Desktop\Estudio_Contable_Springfield\PruebaWinForms\obj\Debug\PruebaWinForms.Form4.resources
+C:\Users\ERIC BERRY\Desktop\Estudio_Contable_Springfield\PruebaWinForms\obj\Debug\PruebaWinForms.FormMenuPrincipal.resources
+C:\Users\ERIC BERRY\Desktop\Estudio_Contable_Springfield\PruebaWinForms\obj\Debug\PruebaWinForms.Properties.Resources.resources
+C:\Users\ERIC BERRY\Desktop\Estudio_Contable_Springfield\PruebaWinForms\obj\Debug\WinForms.csproj.GenerateResource.cache
+C:\Users\ERIC BERRY\Desktop\Estudio_Contable_Springfield\PruebaWinForms\obj\Debug\WinForms.csproj.CoreCompileInputs.cache
+C:\Users\ERIC BERRY\Desktop\Estudio_Contable_Springfield\PruebaWinForms\obj\Debug\WinForms.csproj.CopyComplete
+C:\Users\ERIC BERRY\Desktop\Estudio_Contable_Springfield\PruebaWinForms\obj\Debug\PruebaWinForms.exe
+C:\Users\ERIC BERRY\Desktop\Estudio_Contable_Springfield\PruebaWinForms\obj\Debug\PruebaWinForms.pdb

@@ -102,9 +102,9 @@ namespace PruebaWinForms
         }
         private int ObtenerIdLiquidacion()
         {
-            int idempresa = ObtenerIdEmpresa();
+            int idempleado = ObtenerIdEmpleado();
             int periodo = int.Parse(comboBox3.Text + comboBox2.Text);
-            int idliq = int.Parse(periodo.ToString() + idempresa.ToString());
+            int idliq = int.Parse(periodo.ToString() + idempleado.ToString());
             return idliq;
         }
         private Boolean ValidarUnicidadLiquidacion(int idliquidacion)//el id de la liquidacion en este caso es idempresa + periodo
@@ -112,15 +112,15 @@ namespace PruebaWinForms
             bool valido = true;
             string msg = string.Empty;
             List<int> listaidliquidaciones = new List<int>();
-            List<Liquidaciones> listliquidaciones = _ls.TraerListadoPorEmpresa(ObtenerIdEmpresa());
+            List<Liquidaciones> listliquidaciones = _ls.TraerListadoPorEmpleado(ObtenerIdEmpleado());
             foreach (Liquidaciones l in listliquidaciones)
             {
-                int idliq = int.Parse(l.Periodo.ToString() +l.idEmpresa.ToString());
+                int idliq = int.Parse(l.Periodo.ToString() +l.idEmpleado.ToString());
                 listaidliquidaciones.Add(idliq);
             }
             if (listaidliquidaciones.Any(x => x == idliquidacion))
             {
-                msg = "El periodo ya se encuentra liquidado.";
+                msg = "El periodo ya se encuentra liquidado para este empleado.";
             }
             if (msg != string.Empty)
             {
@@ -128,6 +128,30 @@ namespace PruebaWinForms
                 MessageBox.Show(msg);
             }
             return valido;
+        }
+        private int ObtenerIdEmpleado()
+        {
+            int id = 0;
+            foreach (Empleado empl in _empls.TraerListado())
+            {
+                if (empl.ToString() == listBox1.SelectedItem.ToString())
+                {
+                    id = empl.id;
+                }
+            }
+            return id;
+        }
+        private Empleado ObtenerEmpleado()
+        {
+            Empleado e = new Empleado("", "", DateTime.Now, 2033333330, 1, 1);
+            foreach (Empleado empl in _empls.TraerListado())
+            {
+                if (empl.ToString() == listBox1.SelectedItem.ToString())
+                {
+                    e = empl;
+                }
+            }
+            return e;
         }
         #endregion
 
@@ -154,21 +178,22 @@ namespace PruebaWinForms
             try
             {
                 CargarListaEmpleados(_empls.TraerListadoPorEmpresa(ObtenerIdEmpresa()));
-                CargarListaLiquidaciones(_ls.TraerListadoPorEmpresa(ObtenerIdEmpresa()));
+                textBox1.Clear();
+                textBox2.Clear();
+                textBox3.Clear();
+                textBox4.Clear();
+                listBox2.DataSource = null;
+                button2.Enabled = false;
+                textBox5.Enabled = false;
+                comboBox2.Enabled = false;
+                comboBox3.Enabled = false;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error.\n" + ex.Message);
             }
-            listBox1.Enabled = true;
-            textBox5.Enabled = true;
-            comboBox2.Enabled = true;
-            comboBox3.Enabled = true;
-            button2.Enabled = true;
-            textBox1.Text = ObtenerBrutoTotalPorEmpresa().ToString("#,###,###.00");
-            textBox2.Text = (ObtenerBrutoTotalPorEmpresa()*0.17).ToString("#,###,###.00");  
-            textBox3.Text = DateTime.Today.ToString("dd/MM/yyyy");
-            textBox4.Text = (ObtenerBrutoTotalPorEmpresa() * 0.83).ToString("#,###,###.00");
+            listBox1.Enabled = true;            
+            
         }
         private void button2_Click(object sender, EventArgs e)
         {
@@ -181,12 +206,14 @@ namespace PruebaWinForms
                         int idempresa = ObtenerIdEmpresa();
                         int periodo = int.Parse(comboBox3.Text + comboBox2.Text);
                         string codigotransferencia = textBox5.Text;
-                        double bruto = ObtenerBrutoTotalPorEmpresa();
+                        double bruto = ObtenerSueldoBasicoCategoria(ObtenerEmpleado());
                         double descuentos = bruto * 0.17;
                         this._ls.AltaLiquidacion(idempresa, periodo, codigotransferencia, bruto, descuentos);
                         MessageBox.Show("La liquidación se dió de alta exitosamente");
-                        LimpiarCampos2();
-                        CargarListaEmpleados(_empls.TraerListadoPorEmpresa(ObtenerIdEmpresa()));
+                        CargarListaLiquidaciones(_ls.TraerListadoPorEmpleado(ObtenerIdEmpleado()));
+                        textBox5.Clear();
+                        comboBox2.SelectedItem = null;
+                        comboBox3.SelectedItem = null;
                     }
                     catch (Exception ex)
                     {
@@ -198,6 +225,28 @@ namespace PruebaWinForms
             {
                 MessageBox.Show("Error.\n" + ex.Message);
             }
+        }
+        private void listBox1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (listBox1.SelectedItem != null)
+                {
+                    textBox5.Enabled = true;
+                    comboBox2.Enabled = true;
+                    comboBox3.Enabled = true;
+                    button2.Enabled = true;
+                    textBox1.Text = ObtenerSueldoBasicoCategoria(ObtenerEmpleado()).ToString("#,###,###.00");
+                    textBox2.Text = ((ObtenerSueldoBasicoCategoria(ObtenerEmpleado()) * 0.17).ToString("#,###,###.00"));
+                    textBox3.Text = DateTime.Today.ToString("dd/MM/yyyy");
+                    textBox4.Text = ((ObtenerSueldoBasicoCategoria(ObtenerEmpleado()) * 0.83).ToString("#,###,###.00"));
+                    CargarListaLiquidaciones(_ls.TraerListadoPorEmpleado(ObtenerIdEmpleado()));
+                }                                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Debe seleccionar un empleado de la lista.\nAseguresé de que existan empleados dados de alta.");
+            }            
         }
         #endregion
     }

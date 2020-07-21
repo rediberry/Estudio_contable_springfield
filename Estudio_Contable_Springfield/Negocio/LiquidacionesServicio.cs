@@ -21,18 +21,18 @@ namespace Negocio
             List<Liquidaciones> listliquidaciones = mapper.TraerTodos();
             return listliquidaciones;
         }
-        public List<Liquidaciones> TraerListadoPorEmpresa(int idempresa)
+        public List<Liquidaciones> TraerListadoPorEmpleado(int idempleado)
         {
-            List<Liquidaciones> listliquidacionporempresa = new List<Liquidaciones>();
+            List<Liquidaciones> listliquidacionporempleado = new List<Liquidaciones>();
             List<Liquidaciones> listliquidaciones = mapper.TraerTodos();
             foreach (Liquidaciones l in listliquidaciones)
             {
-                if (l.idEmpresa == idempresa)
+                if (l.idEmpleado == idempleado)
                 {
-                    listliquidacionporempresa.Add(l);
+                    listliquidacionporempleado.Add(l);
                 }
             }
-            return listliquidacionporempresa;
+            return listliquidacionporempleado;
         }
         
         public ResultadoTransaccion AltaLiquidacion(int idempresa, int periodo, string codigotransferencia, double bruto, double descuentos)

@@ -94,7 +94,7 @@ namespace PruebaWinForms
             {
                 if (ValidarCampos() && ValidarUnicidadCuit(Convert.ToInt64(textBox3.Text)))
                 {
-                    string razonsocial = FormatoString(textBox1.Text);
+                    string razonsocial = textBox1.Text.ToUpper();
                     string domicilio = FormatoString(textBox2.Text);
                     Int64 cuit = Convert.ToInt64(textBox3.Text);                    
                     this._emprs.AltaEmpresa(razonsocial, cuit, domicilio);
