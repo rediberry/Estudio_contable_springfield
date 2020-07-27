@@ -42,6 +42,22 @@ namespace Datos
             ResultadoTransaccion mapresult = JsonConvert.DeserializeObject<ResultadoTransaccion>(resultado);
             return mapresult;
         }
+        public ResultadoTransaccion Update(Empresa empresaactualizar)
+        {
+            NameValueCollection obj = ReverseMapUpdate(empresaactualizar);
+            string result = WebHelper.Put("api/v1/estudiocontable/Empresa", obj);
+            ResultadoTransaccion resultTransaccion = JsonConvert.DeserializeObject<ResultadoTransaccion>(result);
+            return resultTransaccion;
+        }
+        private NameValueCollection ReverseMapUpdate(Empresa e)
+        {
+            NameValueCollection n = new NameValueCollection();
+            n.Add("RazonSocial", e.RazonSocial);
+            n.Add("Cuit", e.Cuit.ToString());
+            n.Add("Domicilio", e.Domicilio);
+            n.Add("id", e.id.ToString());
+            return n;
+        }
     }
 }
 

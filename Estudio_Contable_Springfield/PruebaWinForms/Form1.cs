@@ -77,6 +77,30 @@ namespace PruebaWinForms
         {
             return s.First().ToString().ToUpper() + String.Join("", s.Skip(1)).ToLower();
         }
+        private Empresa ObtenerEmpresa()
+        {
+            Empresa empresa = new Empresa("", 30222222223, "");
+            foreach (Empresa e in _emprs.TraerListado())
+            {
+                if (e.ToString() == listBox1.SelectedItem.ToString())
+                {
+                    empresa = e;
+                }
+            }
+            return empresa;
+        }
+        private int ObtenerIdEmpresa()
+        {
+            int id = 0;
+            foreach (Empresa e in _emprs.TraerListado())
+            {
+                if (e.ToString() == listBox1.SelectedItem.ToString())
+                {
+                    id = e.id;
+                }
+            }
+            return id;
+        }
         #endregion
 
         #region eventos
@@ -92,15 +116,32 @@ namespace PruebaWinForms
         {
             try
             {
-                if (ValidarCampos() && ValidarUnicidadCuit(Convert.ToInt64(textBox3.Text)))
+                if (listBox1.SelectedItem == null)
                 {
-                    string razonsocial = textBox1.Text.ToUpper();
-                    string domicilio = FormatoString(textBox2.Text);
-                    Int64 cuit = Convert.ToInt64(textBox3.Text);                    
-                    this._emprs.AltaEmpresa(razonsocial, cuit, domicilio);
-                    MessageBox.Show("La empresa se dió de alta exitosamente");
-                    CargarListaEmpresas(this._emprs.TraerListado());
-                    LimpiarCampos();
+                    if (ValidarCampos() && ValidarUnicidadCuit(Convert.ToInt64(textBox3.Text)))
+                    {
+                        string razonsocial = textBox1.Text.ToUpper();
+                        string domicilio = FormatoString(textBox2.Text);
+                        Int64 cuit = Convert.ToInt64(textBox3.Text);
+                        this._emprs.AltaEmpresa(razonsocial, cuit, domicilio);
+                        MessageBox.Show("La empresa se dió de alta exitosamente");
+                        CargarListaEmpresas(this._emprs.TraerListado());
+                        LimpiarCampos();
+                    }
+                }
+                if (listBox1.SelectedItem != null)
+                {
+                    if (ValidarCampos())
+                    {
+                        string razonsocial = textBox1.Text.ToUpper();
+                        string domicilio = FormatoString(textBox2.Text);
+                        Int64 cuit = Convert.ToInt64(textBox3.Text);
+                        int idempresa = ObtenerIdEmpresa();
+                        this._emprs.ModificarEmpresa(razonsocial, cuit, domicilio, idempresa);
+                        MessageBox.Show("La empresa se modificó exitosamente");
+                        CargarListaEmpresas(this._emprs.TraerListado());
+                        LimpiarCampos();
+                    }
                 }
             }
             catch (Exception ex)
@@ -114,6 +155,26 @@ namespace PruebaWinForms
             textBox2.Clear();
             textBox3.Clear();
             listBox1.SelectedItem = null;
+        }
+        private void listBox1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (listBox1.SelectedItem != null)
+                {
+                    Empresa empr = ObtenerEmpresa();
+                    textBox1.Text = empr.RazonSocial;
+                    textBox2.Text = empr.Domicilio;
+                    textBox3.Text = empr.Cuit.ToString();                    
+                    button3.Enabled = true;
+                    button2.Enabled = true;
+                    button1.Enabled = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Debe seleccionar una empresa de la lista.\nAseguresé de que existan empresas dadas de alta.");
+            }
         }
         #endregion
     }

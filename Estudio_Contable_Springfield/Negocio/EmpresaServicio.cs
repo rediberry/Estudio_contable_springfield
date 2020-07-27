@@ -26,5 +26,12 @@ namespace Negocio
             ResultadoTransaccion resultado = mapper.Insert(empresanueva);
             return resultado;
         }
+        public ResultadoTransaccion ModificarEmpresa(string razonsocial, long cuit, string domicilio, int idempresa)
+        {
+            Empresa empresaactualizar = new Empresa(razonsocial, cuit, domicilio);
+            empresaactualizar.id = idempresa;
+            ResultadoTransaccion resultado = mapper.Update(empresaactualizar);
+            return resultado;
+        }        
     }
 }

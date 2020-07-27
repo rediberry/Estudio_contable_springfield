@@ -50,11 +50,13 @@
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(443, 398);
+            this.button1.Location = new System.Drawing.Point(476, 427);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 5;
@@ -190,11 +192,11 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(443, 319);
+            this.button2.Location = new System.Drawing.Point(395, 319);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 22;
-            this.button2.Text = "Liquidar";
+            this.button2.Text = "Cargar";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -249,6 +251,7 @@
             this.listBox2.Name = "listBox2";
             this.listBox2.Size = new System.Drawing.Size(365, 186);
             this.listBox2.TabIndex = 28;
+            this.listBox2.Click += new System.EventHandler(this.listBox2_Click);
             // 
             // label11
             // 
@@ -259,11 +262,33 @@
             this.label11.TabIndex = 27;
             this.label11.Text = "Listado de Liquidaciones";
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(557, 319);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 29;
+            this.button3.Text = "Limpiar";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(476, 319);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 30;
+            this.button4.Text = "Eliminar";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 569);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.listBox2);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.comboBox3);
@@ -318,5 +343,7 @@
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
     }
 }

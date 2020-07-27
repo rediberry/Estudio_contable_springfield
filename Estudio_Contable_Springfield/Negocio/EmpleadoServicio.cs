@@ -58,5 +58,12 @@ namespace Negocio
             ResultadoTransaccion resultado = mapper.Delete(id);
             return resultado;
         }
+        public ResultadoTransaccion ModificarEmpleado(string nombre, string apellido, DateTime fechanac, long cuil, int idempresa, int idcategoria, int idempleado)
+        {
+            Empleado empleadoactualizar = new Empleado(nombre, apellido, fechanac, cuil, idempresa, idcategoria);
+            empleadoactualizar.id = idempleado;
+            ResultadoTransaccion resultado = mapper.Update(empleadoactualizar);
+            return resultado;
+        }
     }
 }

@@ -57,6 +57,25 @@ namespace Datos
             NameValueCollection n = new NameValueCollection();
             n.Add("codigo", id.ToString());            
             return n;
-        }        
+        }
+        public ResultadoTransaccion Update(Empleado empleadoactualizar)
+        {
+            NameValueCollection obj = ReverseMapUpdate(empleadoactualizar);            
+            string result = WebHelper.Put("api/v1/estudiocontable/Empleado", obj);
+            ResultadoTransaccion resultTransaccion = JsonConvert.DeserializeObject<ResultadoTransaccion>(result);
+            return resultTransaccion;
+        }
+        private NameValueCollection ReverseMapUpdate(Empleado e)
+        {
+            NameValueCollection n = new NameValueCollection();
+            n.Add("idCategoria", e.IdCategoria.ToString());
+            n.Add("idEmpresa", e.IdEmpresa.ToString());
+            n.Add("Cuil", e.Cuil.ToString());
+            n.Add("Nombre", e.Nombre.ToString());
+            n.Add("Apellido", e.Apellido.ToString());
+            n.Add("FechaNacimiento", e.FechaNacimiento.ToString());
+            n.Add("id", e.id.ToString());
+            return n;
+        }
     }
 }

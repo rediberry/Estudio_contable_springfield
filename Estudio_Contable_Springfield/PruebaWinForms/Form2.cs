@@ -116,7 +116,7 @@ namespace PruebaWinForms
                     id = e.id;
                 }
             }
-            return id;           
+            return id;
         }
         private int ObtenerIdCategoria()
         {
@@ -158,7 +158,7 @@ namespace PruebaWinForms
         private string FormatoString(string s)
         {
             return s.First().ToString().ToUpper() + String.Join("", s.Skip(1)).ToLower();
-        }
+        }        
         #endregion
         #region eventos
         private void button1_Click(object sender, EventArgs e)
@@ -182,25 +182,52 @@ namespace PruebaWinForms
         {
             try
             {
-                if (ValidarCampos() 
-                    && ValidarUnicidadCuil(Convert.ToInt64(textBox6.Text)))
+                if(listBox1.SelectedItem == null)
                 {
-                    try
+                    if (ValidarCampos()
+                    && ValidarUnicidadCuil(Convert.ToInt64(textBox6.Text)))
                     {
-                        string nombre = FormatoString(textBox1.Text);
-                        string apellido = FormatoString(textBox5.Text);
-                        Int64 cuil = Convert.ToInt64(textBox6.Text);
-                        DateTime fechanac = Convert.ToDateTime(textBox10.Text);
-                        int idempresa = ObtenerIdEmpresa();
-                        int idcategoria = ObtenerIdCategoria();
-                        this._empls.AltaEmpleado(nombre, apellido, fechanac, cuil, idempresa, idcategoria);
-                        MessageBox.Show("El empleado se dió de alta exitosamente");
-                        LimpiarCampos2();
-                        CargarListaEmpleados(_empls.TraerListadoPorEmpresa(ObtenerIdEmpresa()));
+                        try
+                        {
+                            string nombre = FormatoString(textBox1.Text);
+                            string apellido = FormatoString(textBox5.Text);
+                            Int64 cuil = Convert.ToInt64(textBox6.Text);
+                            DateTime fechanac = Convert.ToDateTime(textBox10.Text);
+                            int idempresa = ObtenerIdEmpresa();
+                            int idcategoria = ObtenerIdCategoria();
+                            this._empls.AltaEmpleado(nombre, apellido, fechanac, cuil, idempresa, idcategoria);
+                            MessageBox.Show("El empleado se dió de alta exitosamente");
+                            LimpiarCampos2();
+                            CargarListaEmpleados(_empls.TraerListadoPorEmpresa(ObtenerIdEmpresa()));
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error al dar de alta.\n" + ex.Message);
+                        }
                     }
-                    catch(Exception ex)
+                }
+                if (listBox1.SelectedItem != null)
+                {
+                    if (ValidarCampos())
                     {
-                        MessageBox.Show("Error al hacer click en grabar.\n" + ex.Message);
+                        try
+                        {
+                            string nombre = FormatoString(textBox1.Text);
+                            string apellido = FormatoString(textBox5.Text);
+                            Int64 cuil = Convert.ToInt64(textBox6.Text);
+                            DateTime fechanac = Convert.ToDateTime(textBox10.Text);
+                            int idempresa = ObtenerIdEmpresa();
+                            int idcategoria = ObtenerIdCategoria();
+                            int idempleado = ObtenerIdEmpleado();
+                            this._empls.ModificarEmpleado(nombre, apellido, fechanac, cuil, idempresa, idcategoria, idempleado);
+                            MessageBox.Show("El empleado se modificó exitosamente");
+                            LimpiarCampos2();
+                            CargarListaEmpleados(_empls.TraerListadoPorEmpresa(ObtenerIdEmpresa()));
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error al modificar.\n" + ex.Message);
+                        }
                     }
                 }
             }
@@ -208,7 +235,6 @@ namespace PruebaWinForms
             {
                 MessageBox.Show("Error.\n" + ex.Message);
             }
-
         }
         private void button2_Click(object sender, EventArgs e)
         {
@@ -272,7 +298,6 @@ namespace PruebaWinForms
             {
                 MessageBox.Show("Debe seleccionar un empleado de la lista.\nAseguresé de que existan empleados dados de alta.");
             }
-
         }
         private void button3_Click(object sender, EventArgs e)
         {

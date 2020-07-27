@@ -55,8 +55,7 @@ namespace PruebaWinForms
             textBox4.Clear();
             textBox5.Clear();
             textBox5.Enabled = false;
-            listBox1.SelectedItem = null;
-            //comboBox1.SelectedItem = null;
+            listBox2.SelectedItem = null;            
             comboBox2.SelectedItem = null;
             comboBox3.SelectedItem = null;
             button2.Enabled = false;            
@@ -97,7 +96,6 @@ namespace PruebaWinForms
                     monto += ObtenerSueldoBasicoCategoria(empl);
                 }
             }
-
             return monto;
         }
         private int ObtenerIdLiquidacion()
@@ -153,6 +151,32 @@ namespace PruebaWinForms
             }
             return e;
         }
+        private Liquidaciones ObtenerLiquidacion()
+        {
+            Liquidaciones liq = new Liquidaciones(1, 1, "", 1, 1);
+            foreach (Liquidaciones l in _ls.TraerListadoPorEmpleado(ObtenerIdEmpleado()))
+            {
+                if (l.ToString() == listBox2.SelectedItem.ToString())
+                {
+                    liq = l;
+                }
+            }
+            return liq;
+        }
+        private Boolean ValidarLiquidacionesPosteriores(int idliquidacionseleccionada)
+        {
+            Boolean validacion = false;
+            List<Liquidaciones> listliquidaciones = _ls.TraerListadoPorEmpleado(ObtenerIdEmpleado());
+            foreach (Liquidaciones l in listliquidaciones)
+            {
+                if (l.id > idliquidacionseleccionada)
+                {
+                    validacion = true;
+                    break;
+                }
+            }            
+            return validacion;
+        }
         #endregion
 
         #region eventos
@@ -170,6 +194,8 @@ namespace PruebaWinForms
             textBox5.Enabled = false;            
             listBox1.Enabled = false;            
             button2.Enabled = false;
+            button3.Enabled = false;
+            button4.Enabled = false;
             comboBox2.Enabled = false;
             comboBox3.Enabled = false;
         }
@@ -182,8 +208,11 @@ namespace PruebaWinForms
                 textBox2.Clear();
                 textBox3.Clear();
                 textBox4.Clear();
+                textBox5.Clear();
                 listBox2.DataSource = null;
                 button2.Enabled = false;
+                button3.Enabled = false;
+                button4.Enabled = false;
                 textBox5.Enabled = false;
                 comboBox2.Enabled = false;
                 comboBox3.Enabled = false;
@@ -199,17 +228,44 @@ namespace PruebaWinForms
         {
             try
             {
-                if (ValidarUnicidadLiquidacion(ObtenerIdLiquidacion()))
+                if (listBox2.SelectedItem == null)
+                {
+                    if (ValidarUnicidadLiquidacion(ObtenerIdLiquidacion()))
+                    {
+                        try
+                        {
+                            int idempleado = ObtenerIdEmpleado();
+                            int periodo = int.Parse(comboBox3.Text + comboBox2.Text);
+                            string codigotransferencia = textBox5.Text;
+                            double bruto = ObtenerSueldoBasicoCategoria(ObtenerEmpleado());
+                            double descuentos = bruto * 0.17;
+                            this._ls.AltaLiquidacion(idempleado, periodo, codigotransferencia, bruto, descuentos);
+                            MessageBox.Show("La liquidación se dió de alta exitosamente");
+                            CargarListaLiquidaciones(_ls.TraerListadoPorEmpleado(ObtenerIdEmpleado()));
+                            textBox5.Clear();
+                            comboBox2.SelectedItem = null;
+                            comboBox3.SelectedItem = null;
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error, no se pudo grabar la liquidación.\n" + ex.Message);
+                        }
+                    }
+
+                }
+                if (listBox2.SelectedItem != null)
                 {
                     try
                     {
-                        int idempresa = ObtenerIdEmpresa();
-                        int periodo = int.Parse(comboBox3.Text + comboBox2.Text);
+                        Liquidaciones l = ObtenerLiquidacion();
+                        int idempleado = l.idEmpleado;
+                        int periodo = l.Periodo;
                         string codigotransferencia = textBox5.Text;
-                        double bruto = ObtenerSueldoBasicoCategoria(ObtenerEmpleado());
-                        double descuentos = bruto * 0.17;
-                        this._ls.AltaLiquidacion(idempresa, periodo, codigotransferencia, bruto, descuentos);
-                        MessageBox.Show("La liquidación se dió de alta exitosamente");
+                        double bruto = l.Bruto;
+                        double descuentos = l.Descuentos;
+                        int idliquidacion = l.id;
+                        this._ls.ModificarLiquidacion(idempleado, periodo, codigotransferencia, bruto, descuentos, idliquidacion);
+                        MessageBox.Show("La liquidación se modificó exitosamente");
                         CargarListaLiquidaciones(_ls.TraerListadoPorEmpleado(ObtenerIdEmpleado()));
                         textBox5.Clear();
                         comboBox2.SelectedItem = null;
@@ -217,9 +273,9 @@ namespace PruebaWinForms
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Error, no se pudo grabar la liquidación.\n" + ex.Message);
-                    }
-                }            
+                        MessageBox.Show("Error al modificar.\n" + ex.Message);
+                    }                    
+                }
             }
             catch (Exception ex)
             {
@@ -233,9 +289,14 @@ namespace PruebaWinForms
                 if (listBox1.SelectedItem != null)
                 {
                     textBox5.Enabled = true;
+                    textBox5.Clear();
+                    comboBox2.SelectedItem = null;
+                    comboBox3.SelectedItem = null;
                     comboBox2.Enabled = true;
                     comboBox3.Enabled = true;
                     button2.Enabled = true;
+                    button3.Enabled = true;
+                    button4.Enabled = false;
                     textBox1.Text = ObtenerSueldoBasicoCategoria(ObtenerEmpleado()).ToString("#,###,###.00");
                     textBox2.Text = ((ObtenerSueldoBasicoCategoria(ObtenerEmpleado()) * 0.17).ToString("#,###,###.00"));
                     textBox3.Text = DateTime.Today.ToString("dd/MM/yyyy");
@@ -247,6 +308,63 @@ namespace PruebaWinForms
             {
                 MessageBox.Show("Debe seleccionar un empleado de la lista.\nAseguresé de que existan empleados dados de alta.");
             }            
+        }
+        private void button3_Click(object sender, EventArgs e)
+        {
+            textBox5.Clear();
+            comboBox2.SelectedItem = null;
+            comboBox3.SelectedItem = null;
+        }
+        private void listBox2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (listBox2.SelectedItem != null)
+                {
+                    Liquidaciones l = ObtenerLiquidacion();
+                    textBox5.Enabled = true;
+                    comboBox2.Enabled = true;
+                    comboBox3.Enabled = true;
+                    button2.Enabled = true;
+                    button3.Enabled = true;
+                    button4.Enabled = true;                    
+                    textBox1.Text = l.Bruto.ToString("#,###,###.00");                    
+                    textBox2.Text = l.Descuentos.ToString("#,###,###.00");                    
+                    textBox3.Text = l.FechaAlta.ToString("dd/MM/yyyy");                    
+                    textBox4.Text = l.SalarioNeto.ToString("#,###,###.00");                    
+                    textBox5.Text = l.CodigoTransferencia;                    
+                    comboBox3.SelectedIndex = comboBox3.FindString(l.Periodo.ToString().Substring(0,4));                    
+                    comboBox2.SelectedIndex = comboBox2.FindString(l.Periodo.ToString().Substring(4));
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar la liquidación.\nAseguresé de que existan liquidaciones cargadas.");
+            }
+        }
+        private void button4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int id = ObtenerLiquidacion().id;
+                if (!ValidarLiquidacionesPosteriores(id))
+                {
+                    this._ls.EliminarLiquidacion(id);
+                    MessageBox.Show("La liquidación se eliminó exitosamente");
+                    LimpiarCampos2();
+                    button3.Enabled = false;
+                    button4.Enabled = false;
+                    CargarListaLiquidaciones(_ls.TraerListadoPorEmpleado(ObtenerIdEmpleado()));
+                }
+                else
+                {
+                    MessageBox.Show("No se puede eliminar la liquidación.\nPosee liquidaciones posteriores.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error.\n" + ex.Message);
+            }
         }
         #endregion
     }

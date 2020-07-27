@@ -138,9 +138,9 @@
             this.button4.ForeColor = System.Drawing.Color.Gainsboro;
             this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(3, 302);
+            this.button4.Location = new System.Drawing.Point(0, 302);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(244, 37);
+            this.button4.Size = new System.Drawing.Size(250, 37);
             this.button4.TabIndex = 3;
             this.button4.Text = "Liquidaciones";
             this.button4.UseVisualStyleBackColor = true;
@@ -156,9 +156,9 @@
             this.button3.ForeColor = System.Drawing.Color.Gainsboro;
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(3, 259);
+            this.button3.Location = new System.Drawing.Point(0, 259);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(244, 37);
+            this.button3.Size = new System.Drawing.Size(250, 37);
             this.button3.TabIndex = 2;
             this.button3.Text = "Categorías";
             this.button3.UseVisualStyleBackColor = true;
@@ -174,9 +174,9 @@
             this.button2.ForeColor = System.Drawing.Color.Gainsboro;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(6, 216);
+            this.button2.Location = new System.Drawing.Point(0, 216);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(244, 37);
+            this.button2.Size = new System.Drawing.Size(250, 37);
             this.button2.TabIndex = 1;
             this.button2.Text = "Empleados";
             this.button2.UseVisualStyleBackColor = true;
@@ -192,9 +192,9 @@
             this.button1.ForeColor = System.Drawing.Color.Gainsboro;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(3, 173);
+            this.button1.Location = new System.Drawing.Point(0, 173);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(244, 37);
+            this.button1.Size = new System.Drawing.Size(250, 37);
             this.button1.TabIndex = 0;
             this.button1.Text = "Empresa";
             this.button1.UseVisualStyleBackColor = true;

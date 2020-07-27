@@ -25,7 +25,7 @@ namespace Entidades
             this._cuil = cuil;
             this._idEmpresa = idempresa;
             this._idCategoria = idcategoria;
-        }       
+        }        
         [DataMember]
         public DateTime FechaNacimiento { get => _fechaNac; set => _fechaNac = value; }
         [DataMember]

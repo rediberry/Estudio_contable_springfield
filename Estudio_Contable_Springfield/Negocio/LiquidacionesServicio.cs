@@ -35,11 +35,23 @@ namespace Negocio
             return listliquidacionporempleado;
         }
         
-        public ResultadoTransaccion AltaLiquidacion(int idempresa, int periodo, string codigotransferencia, double bruto, double descuentos)
+        public ResultadoTransaccion AltaLiquidacion(int idempleado, int periodo, string codigotransferencia, double bruto, double descuentos)
         {
-            Liquidaciones liquidacionnueva = new Liquidaciones(idempresa, periodo, codigotransferencia, bruto, descuentos);
+            Liquidaciones liquidacionnueva = new Liquidaciones(idempleado, periodo, codigotransferencia, bruto, descuentos);
             ResultadoTransaccion resultado = mapper.Insert(liquidacionnueva);
             return resultado;
-        }     
+        }
+        public ResultadoTransaccion EliminarLiquidacion(int id)
+        {
+            ResultadoTransaccion resultado = mapper.Delete(id);
+            return resultado;
+        }
+        public ResultadoTransaccion ModificarLiquidacion(int idempleado, int periodo, string codigotransferencia, double bruto, double descuentos, int idliquidacion)
+        {
+            Liquidaciones liquidacionaactualizar = new Liquidaciones(idempleado, periodo, codigotransferencia, bruto, descuentos);
+            liquidacionaactualizar.id = idliquidacion;
+            ResultadoTransaccion resultado = mapper.Update(liquidacionaactualizar);
+            return resultado;
+        }
     }
 }

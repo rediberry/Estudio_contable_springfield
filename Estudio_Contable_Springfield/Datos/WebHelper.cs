@@ -67,6 +67,22 @@ namespace Datos
                 return "{ \"isOk\":false,\"id\":-1,\"error\":\"Error en el llamado al servicio\"}";
             }
         }
-    }
+        public static string Put(string url, NameValueCollection parametros)
+        {
+            string uri = rutaBase + url;
 
+            try
+            {
+                var response = client.UploadValues(uri, "PUT", parametros);
+
+                var responseString = Encoding.Default.GetString(response);
+
+                return responseString;
+            }
+            catch (Exception ex)
+            {
+                return "{ \"isOk\":false,\"id\":-1,\"error\":\"Error en el llamado al servicio\"}";
+            }
+        }
+    }
 }
