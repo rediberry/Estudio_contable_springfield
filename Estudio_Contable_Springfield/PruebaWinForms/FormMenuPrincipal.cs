@@ -20,7 +20,7 @@ namespace PruebaWinForms
             InitializeComponent();
             //Estas lineas eliminan los parpadeos del formulario o controles en la interfaz grafica (Pero no en un 100%)
             this.SetStyle(ControlStyles.ResizeRedraw, true);
-            this.DoubleBuffered = true;
+            this.DoubleBuffered = true;            
         }
         #region métodos
         //RESIZE METODO PARA REDIMENCIONAR/CAMBIAR TAMAÑO A FORMULARIO EN TIEMPO DE EJECUCION ----------------------------------------------------------
@@ -87,7 +87,7 @@ namespace PruebaWinForms
             //si el formulario/instancia existe
             else
             {
-                formulario.BringToFront();
+                formulario.BringToFront();                
             }            
         }
         //----------------METODO CAMBIAR COLOR DE BOTON AL CERRAR FORM
@@ -137,7 +137,10 @@ namespace PruebaWinForms
         private void button1_Click(object sender, EventArgs e)
         {
             this.AbrirFormulario<Form1>();
-            button1.BackColor = Color.FromArgb(12,61,92);
+            button1.BackColor = Color.FromArgb(12,61,92);            
+        }
+        private void button5_Click(object sender, EventArgs e)
+        {            
         }
         private void button2_Click(object sender, EventArgs e)
         {
@@ -152,7 +155,7 @@ namespace PruebaWinForms
         private void button4_Click(object sender, EventArgs e)
         {
             this.AbrirFormulario<Form4>();
-            button4.BackColor = Color.FromArgb(12, 61, 92);
+            button4.BackColor = Color.FromArgb(12, 61, 92);            
         }
         private void btnMinimizar_Click(object sender, EventArgs e)
         {

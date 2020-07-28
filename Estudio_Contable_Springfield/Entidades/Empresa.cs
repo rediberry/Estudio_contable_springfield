@@ -45,5 +45,12 @@ namespace Entidades
                 return string.Format("{0}) {1} - CUIT: {2} - Fecha Alta: {3} - Domicilio: {4}.", this._id, this._razonSocial, this._cuit, this.FechaAlta.ToString("dd/MM/yyyy"), this.Domicilio);
             }
         }
+        public string NombreAbreviadoEmpresa
+        {
+            get
+            {
+                return string.Format("{0}) {1}", this._id, this._razonSocial);
+            }
+        }
     }
 }
