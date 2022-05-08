@@ -2,6 +2,11 @@
 Repositorio del Trabajo práctico final (Materia: Construcción de aplicaciones informáticas - FCE UBA) 
 
 ## Qué utilicé para hacerlo?
++ .Net framework
++ C#
++ swagger.com web services para la persistencia
++ arquitectura de 4 capas
++ Winforms para la interfaz de usuario
 
 ## Problema:
 Tengo una Nomina y necesito modelar entre otras funciones el alta/modificación (es un solo botón -> grabar) y baja de empleados. También se necesita modelar 
